@@ -1,0 +1,4 @@
+# ignore npm modules
+node_modules
+coverage
+lib

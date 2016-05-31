@@ -1,0 +1,79 @@
+{
+  "name": "euler-ui",
+  "version": "0.1.0",
+  "description": "Powerful widgets and utilities for React",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "test": "karma start --single-run --browsers PhantomJS"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "files": ["lib"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinxi/euler.git"
+  },
+  "keywords": [
+    "React",
+    "Components"
+  ],
+  "author": "magicxin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shinxi/euler/issues"
+  },
+  "homepage": "https://github.com/shinxi/euler#readme",
+  "dependencies": {
+    "lodash": "^4.13.1",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-select": "^1.0.0-beta13",
+    "superagent": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.3.15",
+    "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-register": "^6.3.13",
+    "babel-standalone": "^6.6.5",
+    "chai": "^3.5.0",
+    "css-loader": "^0.23.1",
+    "enzyme": "^2.3.0",
+    "file-loader": "^0.8.5",
+    "isparta": "^4.0.0",
+    "isparta-loader": "^2.0.0",
+    "json-loader": "^0.5.4",
+    "karma": "^0.13.22",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-cli": "^0.1.2",
+    "karma-coverage": "^1.0.0",
+    "karma-coveralls": "^1.1.2",
+    "karma-mocha": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sinon": "^1.0.5",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.2.5",
+    "phantomjs-prebuilt": "^2.1.7",
+    "react-addons-test-utils": "^15.1.0",
+    "react-hot-loader": "^1.3.0",
+    "request": "^2.70.0",
+    "sinon": "^1.17.4",
+    "sinon-chai": "^2.8.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.14",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.9.1"
+  }
+}
