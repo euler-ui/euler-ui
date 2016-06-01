@@ -1,12 +1,13 @@
 {
   "name": "euler-ui",
-  "version": "0.1.0",
+  "version": "0.1.1-alpha",
   "description": "Powerful widgets and utilities for React",
   "main": "./lib/index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
     "test": "karma start --single-run --browsers PhantomJS"
   },
+  "style": "lib/select/select.css",
   "babel": {
     "presets": [
       "es2015",

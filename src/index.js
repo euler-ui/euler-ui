@@ -1,3 +1,1 @@
-export default {
-  select: require('./select'),
-}
+export const Select = require('./select');
