@@ -1,6 +1,6 @@
 {
   "name": "euler-ui",
-  "version": "0.1.1-alpha",
+  "version": "0.1.1-alpha.1",
   "description": "Powerful widgets and utilities for React",
   "main": "./lib/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "files": ["lib"],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shinxi/euler.git"
+    "url": "git+https://github.com/shinxi/euler-ui.git"
   },
   "keywords": [
     "React",
@@ -26,17 +26,17 @@
   "author": "magicxin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shinxi/euler/issues"
+    "url": "https://github.com/shinxi/euler-ui/issues"
   },
-  "homepage": "https://github.com/shinxi/euler#readme",
+  "homepage": "https://github.com/shinxi/euler-ui#readme",
   "dependencies": {
     "lodash": "^4.13.1",
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0",
-    "react-select": "^1.0.0-beta13",
-    "superagent": "^1.8.3"
+    "react-select": "^1.0.0-beta13"
   },
   "devDependencies": {
+    "superagent": "^1.8.3",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
     "babel-cli": "^6.9.0",
     "babel-core": "^6.3.15",
     "babel-loader": "^6.2.4",

@@ -1,1 +1,2 @@
-export const Select = require('./select');
+import MSelect from './select'
+export const Select = MSelect
