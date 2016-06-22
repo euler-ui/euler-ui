@@ -5,7 +5,7 @@ import React from 'react';
 var req = require.context("../src", true, /\.js$/);
 
 const TestHelper = {
-  createComponent(path, options) {
+  require(path, options) {
     if (!_.endsWith(path, "/") && !/\.js$/.test(path)) {
       path = path + ".js"
     }
@@ -53,7 +53,7 @@ const TestHelper = {
     );
   },
   createRenderedComponent(path, options) {
-    var RenderedComp = this.createComponent(path, options);
+    var RenderedComp = this.require(path, options);
     return this.renderToDom(RenderedComp);
   },
   clean() {

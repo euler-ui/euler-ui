@@ -6,5 +6,7 @@
 <!--
 [![Latest Stable Version](https://poser.pugx.org/shinxi/euler_react/v/stable.png)](https://packagist.org/packages/shinxi/euler)
 -->
+[![NPM](https://nodei.co/npm/euler-ui.png?downloads=true&downloadRank=true)](https://nodei.co/npm/euler-ui/)
+
 # euler
 Core Components & utility classes.

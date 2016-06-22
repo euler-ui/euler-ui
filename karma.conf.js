@@ -64,7 +64,11 @@ module.exports = function(config) {
             test: /\.json$/,
             loader: 'json-loader'
           }
-        ]
+        ],
+        noParse: /request\/server\.js/
+      },
+      node: {
+        fs: "empty"
       },
       watch: true
     },

@@ -1,0 +1,187 @@
+.notifications-tc {
+    font-family: inherit;
+    position: fixed;
+    padding: 0 10px 10px 10px;
+    z-index: 9998;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: auto;
+    bottom: 0px;
+    right: 0px;
+}
+
+.notification-info {
+    position: relative;
+    width: 400px;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 10px 0px 0px;
+    padding: 10px;
+    display: block;
+    color: #FFFFFF;
+    top: 0px;
+    height: 112px;
+    border: 1px solid;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+}
+
+.notification-info:hover {
+    border-color: #FFF !important;
+}
+
+.notification-info .notification-icon-wrapper {
+    position: absolute;
+    left: 15px;
+    width: 60px;
+    height: 100%;
+    top: 25px;
+}
+
+.notification-info .notification-notify-icon {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.notifications-tc .success {
+    background-color: #29B87E;
+    border-color: #29B87E;
+}
+
+.notifications-tc .error {
+    background-color: #CA2121;
+    border-color: #CA2121;
+}
+
+.notifications-tc .info {
+    background-color: #2E79B4;
+    border-color: #2E79B4;
+}
+
+.notifications-tc .warning {
+    background-color: #CE812E;
+    border-color: #CE812E;
+}
+
+.notifications-tc .success .fa-check-circle:before {
+    content: "\f058";
+}
+
+.notifications-tc .error .fa-check-circle:before {
+    content: "\f057";
+}
+
+.notifications-tc .info .fa-check-circle:before {
+    content: "\f05a";
+}
+
+.notifications-tc .warning .fa-check-circle:before {
+    content: "\f06a";
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.notification-info .notification-notify-icon > div .icon-el {
+    text-align: center;
+    font-size: 55px;
+}
+
+.notification-info .notification-info-body {
+    margin: 10px 20px 10px 75px;
+}
+
+.notification-info .notification-info-title {
+    font-size: 25px;
+    position: relative;
+    margin-top: -10px;
+}
+
+.notification-info .notification-info-msg {
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.notification-info .notification-close {
+    position: absolute;
+    text-align: center;
+    border-radius: 50%;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    line-height: 19px;
+    width: 19px;
+    height: 19px;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0
+    }
+}
+
+.fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        transform: translateY(-20px)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    display: block !important;
+}
