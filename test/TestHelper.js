@@ -1,6 +1,7 @@
 import { mount } from 'enzyme';
 import _ from 'lodash';
 import React from 'react';
+import cheerio from 'cheerio';
 
 var req = require.context("../src", true, /\.js$/);
 
@@ -17,6 +18,9 @@ const TestHelper = {
       DynamicComp.__options = options;;
     }
     return DynamicComp
+  },
+  getSelector() {
+    return cheerio.load(document.body.innerHTML);
   },
   renderToDom(Comp) {
     var options = Comp.__options;

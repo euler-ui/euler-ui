@@ -1,6 +1,6 @@
 var componentsContext = require.context('../src', true, /.*\.js$/);
 componentsContext.keys().forEach((key) => {
-  if ("./request/server.js" === key) {
+  if ("./request/server.js" === key || './index.js' === key) {
     return;
   }
   componentsContext(key);

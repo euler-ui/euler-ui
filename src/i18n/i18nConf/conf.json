@@ -1,0 +1,9 @@
+{
+    "default": "zh_cn",
+    "locales": {
+      "zh": "zh_cn",
+      "zh_cn": "zh_cn",
+      "en": "en_us",
+      "en_us": "en_us"
+    }
+}

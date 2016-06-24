@@ -5,7 +5,7 @@ var conf;
 
 function init() {
   console.error("I'm requiring");
-  // var confs = require("../../../../req_conf/conf.json");
+  var confs = require("../../../../e_conf/req/conf.json");
 
   var buildEnv = confs.BUILD_ENV || '';
   var __DEV__ = buildEnv === 'DEV' || buildEnv === '';
@@ -14,13 +14,13 @@ function init() {
   var __PROD__ = buildEnv === 'PROD';
   var proxySettings = {};
   if (__DEV__) {
-    proxySettings = require("../../../../req_conf/proxy/proxy.json");
+    proxySettings = require("../../../../e_conf/req/proxy/proxy.json");
   } else if (__SIT__) {
-    proxySettings = require("../../../../req_conf/proxy/proxy_sit.json");
+    proxySettings = require("../../../../e_conf/req/proxy/proxy_sit.json");
   } else if (__UAT__) {
-    proxySettings = require("../../../../req_conf/proxy/proxy_uat.json");
+    proxySettings = require("../../../../e_conf/req/proxy/proxy_uat.json");
   } else if (__PROD__) {
-    proxySettings = require("../../../../req_conf/proxy/proxy_prod.json");
+    proxySettings = require("../../../../e_conf/req/proxy/proxy_prod.json");
   }
   conf = {
     settings: proxySettings[1] || proxySettings,

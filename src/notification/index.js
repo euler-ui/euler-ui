@@ -1,6 +1,9 @@
 import './notify.css';
-import Localization from '../i18n'
+import L10nFactory from '../i18n'
 
+const Localization = L10nFactory.create({
+  isLocal: true
+}).init();
 var notifyTemplate = `
     <div class="notifications-tc">
         <div class="notification-info" >
@@ -10,7 +13,7 @@ var notifyTemplate = `
                 </div></div>
             </div>
             
-            <div class="notification-info-body"><div class="notification-info-title"><div></div></div><div class="notification-info-msg" style="padding-top:15px; max-height: 60px;">#{message} </div></div>
+            <div class="notification-info-body"><div class="notification-info-title"><div></div></div><div class="notification-info-msg" style="padding-top:15px; max-height: 60px;">#{message}</div></div>
             <span class="notification-close">×</span>
         </div>
 </div>`
@@ -61,6 +64,12 @@ var Notification = {
           title = Localization.get("notification.warning");
           break;
       }
+    }
+
+    if (!notifyDiv) {
+      notifyDiv = document.createElement('div');
+      notifyDiv.id = "notification";
+      document.body.appendChild(notifyDiv);
     }
     var nhtml = notifyTemplate.replace("#{message}", message);
     // nhtml = nhtml.replace("#{title}", title);
