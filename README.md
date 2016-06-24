@@ -49,6 +49,7 @@ With simple configuration, you can count on Request module and be able to test w
   * Start server
       1. create e_conf/req folder at your project root
       2. add conf.json at e_conf/req.
+
         ```js
         {
             "STATIC_FOLDER": ["/", "/src"], // static folders that be used at request server
@@ -57,13 +58,16 @@ With simple configuration, you can count on Request module and be able to test w
             "INDEX_HTML": "src/public/index.html", // index html that be used at request server
         }
         ```
+
       3. run 
+
         ```
         npm estart
         ```
   * Sending a request
     1. create proxy folder at e_conf/req
     2. create differnt request proxy for different environment, e.g., proxy.json or proxy_dev.json, proxy_sit.json, proxy_uat.json, proxy_prod.json
+
     ```js proxy.json
         {
             "LOGIN": {
@@ -73,64 +77,67 @@ With simple configuration, you can count on Request module and be able to test w
             }
         }
     ```
-    3. request
-        ```js actions/login.js
-            import { Request as eRequest } from 'euler-ui'
-            export const loginUser = (userName, pwd) => {
-                eRequest({
-                  url: "LOGIN",
-                  method: "post",
-                  data: {
-                    userName: userName,
-                    password: pwd
-                  }
-                }, (err, response) => {
-                  if (err) {
-                    error();
-                    return;
-                  }
-                  successs();
-                })
-            }
-        ```
 
-        ```js components/login.js
-            import {loginUser} from '../actions/login'
-            ...
-              login() {
-                loginUser();
+    3. request
+
+    ```js actions/login.js
+        import { Request as eRequest } from 'euler-ui'
+        export const loginUser = (userName, pwd) => {
+            eRequest({
+              url: "LOGIN",
+              method: "post",
+              data: {
+                userName: userName,
+                password: pwd
               }
-            ...
-        ```
-    4. request API
-        ```js
-        eRequest({
-            url: "USER_LOGIN", // key at e_conf/req/proxy/proxy*.json
-            method: 'get', //post or get or put or delete
-            queryParams: { // query parameters
-              parma1: 'value1',
-              parma2: 'value2'
-            },
-            restParams: {
-              productId: "1000"
-              // if path at proxy*.json is '/issues/product/:productId/groupbystatus', the real path will be 
-              // '/issues/product/1000/groupbystatus'    
-            }
-            data: { // post data
-              userName: 'Tom',
-              age: 28
-            },
-            headers: { //header data
-              'Context-type': "text"
-            }
-        }, (err, response) => { //http://visionmedia.github.io/superagent/#response-properties
-            if (err) {
-                error()
+            }, (err, response) => {
+              if (err) {
+                error();
                 return;
-            }
-            success();
-        })
-      ```
+              }
+              successs();
+            })
+        }
+    ```
+
+    ```js components/login.js
+        import {loginUser} from '../actions/login'
+        ...
+          login() {
+            loginUser();
+          }
+        ...
+    ```
+    4. request API
+    
+    ```js
+    eRequest({
+        url: "USER_LOGIN", // key at e_conf/req/proxy/proxy*.json
+        method: 'get', //post or get or put or delete
+        queryParams: { // query parameters
+          parma1: 'value1',
+          parma2: 'value2'
+        },
+        restParams: {
+          productId: "1000"
+          // if path at proxy*.json is '/issues/product/:productId/groupbystatus', the real path will be 
+          // '/issues/product/1000/groupbystatus'    
+        }
+        data: { // post data
+          userName: 'Tom',
+          age: 28
+        },
+        headers: { //header data
+          'Context-type': "text"
+        }
+    }, (err, response) => { //http://visionmedia.github.io/superagent/#response-properties
+        if (err) {
+            error()
+            return;
+        }
+        success();
+    })
+  ```
 
 # Notification
 
