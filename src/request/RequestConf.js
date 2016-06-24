@@ -4,7 +4,6 @@ import _ from 'lodash'
 var conf;
 
 function init() {
-  console.error("I'm requiring");
   var confs = require("../../../../e_conf/req/conf.json");
 
   var buildEnv = confs.BUILD_ENV || '';
