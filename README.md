@@ -68,76 +68,80 @@ With simple configuration, you can count on Request module and be able to test w
     1. create proxy folder at e_conf/req
     2. create differnt request proxy for different environment, e.g., proxy.json or proxy_dev.json, proxy_sit.json, proxy_uat.json, proxy_prod.json
 
-    ```js proxy.json
-        {
-            "LOGIN": {
-                "path": "login", // path will be used to send request by browser
-                "source": "localhost:4000/login", // real path the request will be sent to
-                "method": "post" // request method
+        ```js 
+        proxy.json
+            {
+                "LOGIN": {
+                    "path": "login", // path will be used to send request by browser
+                    "source": "localhost:4000/login", // real path the request will be sent to
+                    "method": "post" // request method
+                }
             }
-        }
-    ```
+        ```
 
     3. request
 
-    ```js actions/login.js
-        import { Request as eRequest } from 'euler-ui'
-        export const loginUser = (userName, pwd) => {
-            eRequest({
-              url: "LOGIN",
-              method: "post",
-              data: {
-                userName: userName,
-                password: pwd
-              }
-            }, (err, response) => {
-              if (err) {
-                error();
-                return;
-              }
-              successs();
-            })
-        }
-    ```
+        ```js 
+        actions/login.js
+            import { Request as eRequest } from 'euler-ui'
+            export const loginUser = (userName, pwd) => {
+                eRequest({
+                  url: "LOGIN",
+                  method: "post",
+                  data: {
+                    userName: userName,
+                    password: pwd
+                  }
+                }, (err, response) => {
+                  if (err) {
+                    error();
+                    return;
+                  }
+                  successs();
+                })
+            }
+        ```
 
-    ```js components/login.js
-        import {loginUser} from '../actions/login'
-        ...
-          login() {
-            loginUser();
-          }
-        ...
-    ```
+        ```js 
+        components/login.js
+            import {loginUser} from '../actions/login'
+            ...
+              login() {
+                loginUser();
+              }
+            ...
+        ```
+    
     4. request API
     
-    ```js
-    eRequest({
-        url: "USER_LOGIN", // key at e_conf/req/proxy/proxy*.json
-        method: 'get', //post or get or put or delete
-        queryParams: { // query parameters
-          parma1: 'value1',
-          parma2: 'value2'
-        },
-        restParams: {
-          productId: "1000"
-          // if path at proxy*.json is '/issues/product/:productId/groupbystatus', the real path will be 
-          // '/issues/product/1000/groupbystatus'    
-        }
-        data: { // post data
-          userName: 'Tom',
-          age: 28
-        },
-        headers: { //header data
-          'Context-type': "text"
-        }
-    }, (err, response) => { //http://visionmedia.github.io/superagent/#response-properties
-        if (err) {
-            error()
-            return;
-        }
-        success();
-    })
-  ```
+        ```js
+        eRequest({
+            url: "USER_LOGIN", // key at e_conf/req/proxy/proxy*.json
+            method: 'get', //post or get or put or delete
+            queryParams: { // query parameters
+              parma1: 'value1',
+              parma2: 'value2'
+            },
+            restParams: {
+              productId: "1000"
+              // if path at proxy*.json is '/issues/product/:productId/groupbystatus', the real path will be 
+              // '/issues/product/1000/groupbystatus'    
+            }
+            data: { // post data
+              userName: 'Tom',
+              age: 28
+            },
+            headers: { //header data
+              'Context-type': "text"
+            }
+        }, (err, response) => { //http://visionmedia.github.io/superagent/#response-properties
+            if (err) {
+                error()
+                return;
+            }
+            success();
+        })
+      ```
 
 # Notification
 
@@ -168,8 +172,10 @@ Notification.create({
 
 Module for internationalization and localization purpose. Switch differnt locale at runtime!
 
-    1. create e_conf/i18n folder at your project root.
-    2. add conf.json at e_conf/i18n.
+1. create e_conf/i18n folder at your project root.
+
+2. add conf.json at e_conf/i18n.
+
     ```js
     {
         "default": "zh_cn", // default locale name, you can append url query "locale=xxx" to overwrite this settings
@@ -184,8 +190,10 @@ Module for internationalization and localization purpose. Switch differnt locale
         }
     }
     ```
-    3. add your locale*.json.
-    ```js locale_en_us.json
+3. add your locale*.json.
+
+    ```js 
+    locale_en_us.json
         {
           "notification": {
             "success": "Success",
@@ -195,7 +203,9 @@ Module for internationalization and localization purpose. Switch differnt locale
           }
         }
     ```
-    ```js locale_zh_cn.json
+    
+    ```js 
+    locale_zh_cn.json
         {
           "notification": {
             "success": "成功",
@@ -205,12 +215,12 @@ Module for internationalization and localization purpose. Switch differnt locale
           }
         }
     ```
-    4. After above steps, you are now free to use our i18n module!
-    ```js main.js
+    
+4. After above steps, you are now free to use our i18n module!
+    ```js 
+    main.js
         import { i18n} from 'euler-ui'
         console.log(Localization.get("notification.info"));
-    ```
-
     ```
 
 # Select
