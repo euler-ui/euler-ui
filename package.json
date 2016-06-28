@@ -1,6 +1,6 @@
 {
   "name": "euler-ui",
-  "version": "0.1.1-alpha.24",
+  "version": "0.1.1-alpha.25",
   "description": "Powerful widgets and utilities for React",
   "main": "./lib/index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shinxi/euler-ui.git"
+    "url": "git+https://github.com/euler-ui/euler-ui.git"
   },
   "keywords": [
     "React",
@@ -32,9 +32,9 @@
   "author": "magicxin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shinxi/euler-ui/issues"
+    "url": "https://github.com/euler-ui/euler-ui/issues"
   },
-  "homepage": "https://github.com/shinxi/euler-ui#readme",
+  "homepage": "https://github.com/euler-ui/euler-ui#readme",
   "dependencies": {
     "bluebird": "^3.4.1",
     "lodash": "^4.13.1",
