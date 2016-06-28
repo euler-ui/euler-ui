@@ -32,7 +32,7 @@ var euler = require("euler-ui");
 or es6
 ```js
 import * as euler from 'euler-ui'
-import {Request, Select, i18n, Notification} from 'euler-ui'
+import { request, i18n, Notification, Select } from 'euler-ui'
 ```
 
 # Features
@@ -54,7 +54,7 @@ With simple configuration, you can count on Request module and be able to test w
         {
             "STATIC_FOLDER": ["/", "/src"], // static folders that be used at request server
             "WEBPACK_CONF_FILE": "webpack.config.js", // webpack config file path
-            "BUILD_ENV": "DEV", // build env, default is DEV, options are DEV, SIT, UAT, PROD
+            "BUILD_ENV": "DEV", // build env, default is DEV, options are DEV, SIT, UAT, PROD, it will be mapped with different proxy file.
             "INDEX_HTML": "src/public/index.html", // index html that be used at request server
         }
         ```
@@ -70,23 +70,19 @@ With simple configuration, you can count on Request module and be able to test w
 
         ```js 
         proxy.json
-            {
-                "LOGIN": {
-                    "path": "login", // path will be used to send request by browser
-                    "source": "localhost:4000/login", // real path the request will be sent to
-                    "method": "post" // request method
-                }
-            }
+            [
+                "proxy": "http://localhost:8000" // global proxy setting
+            ]
         ```
 
     3. request
 
         ```js 
         actions/login.js
-            import { Request as eRequest } from 'euler-ui'
+            import { request } from 'euler-ui'
             export const loginUser = (userName, pwd) => {
-                eRequest({
-                  url: "LOGIN",
+                request({
+                  url: "/portal/login",
                   method: "post",
                   data: {
                     userName: userName,
@@ -111,21 +107,21 @@ With simple configuration, you can count on Request module and be able to test w
               }
             ...
         ```
-    
+
     4. request API
-    
+        Simply speaking, use below api to send a request, the request will be sent to the proxy server.
         ```js
-        eRequest({
-            url: "USER_LOGIN", // key at e_conf/req/proxy/proxy*.json
+        request({
+            url: "/portal/login",
             method: 'get', //post or get or put or delete
-            queryParams: { // query parameters
+            queryParams: { // query parameters, the request url will be /portal/login?param1=value1&param2=value2
               parma1: 'value1',
               parma2: 'value2'
             },
             restParams: {
               productId: "1000"
-              // if path at proxy*.json is '/issues/product/:productId/groupbystatus', the real path will be 
-              // '/issues/product/1000/groupbystatus'    
+              // if url path is '/issues/product/:productId/groupbystatus', the real path will be 
+              // '/issues/product/1000/groupbystatus'
             }
             data: { // post data
               userName: 'Tom',
@@ -141,7 +137,48 @@ With simple configuration, you can count on Request module and be able to test w
             }
             success();
         })
-      ```
+        ```
+        Moreover, you can specify a request at proxy.json with the same identifier sent by request
+        ```js 
+        proxy.json
+            [
+                "proxy": "http://localhost:8000", // global proxy setting
+                "requests": {
+                    "LOGIN": {
+                        "path": "login", // path will be used to send request by browser
+                        "source": "localhost:8001/login"// real path the request will be sent to
+                    }
+                }
+            ]
+        ```
+        ```js
+        request({
+            id: "USER_LOGIN", // key at e_conf/req/proxy/proxy*.json#requests
+            method: 'get', //post or get or put or delete
+            queryParams: { // query parameters, the request url will be /portal/login?param1=value1&param2=value2
+              parma1: 'value1',
+              parma2: 'value2'
+            },
+            restParams: {
+              productId: "1000"
+              // if url path is '/issues/product/:productId/groupbystatus', the real path will be 
+              // '/issues/product/1000/groupbystatus'
+            }
+            data: { // post data
+              userName: 'Tom',
+              age: 28
+            },
+            headers: { //header data
+              'Context-type': "text"
+            }
+        }, (err, response) => { //http://visionmedia.github.io/superagent/#response-properties
+            if (err) {
+                error()
+                return;
+            }
+            success();
+        })
+        ```
 # Notification
 
 A simple notification creator for you to create information/warning/error/success notificaiton.

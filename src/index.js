@@ -4,6 +4,7 @@ import ENotification from './notification'
 import LocalizationFacotry from './i18n'
 export const Select = ESelect
 export const Request = ERequest
+export const request = Request
 export const Notification = ENotification
 export const Notify = Notification
 export const i18n = LocalizationFacotry.create().init()

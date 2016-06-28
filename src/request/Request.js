@@ -10,19 +10,14 @@ var isIE = !isOpera && (check(/msie/) || check(/trident/));
 
 var prefix = "";
 var REQUEST_MAPS;
+var globalProxy;
 
 function init() {
   var requestConf = require("./RequestConf").getRequestConf();
   var buildEnv = requestConf.BUILD_ENV || '';
-  var __DEV__ = buildEnv === 'DEV' || buildEnv === '';
-  var __SIT__ = buildEnv === 'SIT';
-  var __UAT__ = buildEnv === 'UAT';
-  var __PROD__ = buildEnv === 'PROD';
-
-  if (__PROD__) {
-    prefix = "/api"
-  }
-  REQUEST_MAPS = requestConf.settings;
+  prefix = requestConf.urlPrefix;
+  REQUEST_MAPS = requestConf.requests;
+  globalProxy = requestConf.proxy;
 }
 
 /**
@@ -71,7 +66,7 @@ var Request = function(options, cb) {
   var restParams = options.restParams;
 
 
-
+  // TODO what does below codes do?
   if (/^(\/|\\)/.test(source)) {
     url = source;
     method = "GET";

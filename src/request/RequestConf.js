@@ -22,8 +22,9 @@ function init() {
     proxySettings = require("../../../../e_conf/req/proxy/proxy_prod.json");
   }
   conf = {
-    settings: proxySettings[1] || proxySettings,
-    global: proxySettings[0],
+    requests: proxySettings.requests,
+    proxy: proxySettings.proxy,
+    urlPrefix: proxySettings.url_prefix || "dev",
     staticFolders: confs.STATIC_FOLDER,
     webpackConfigFile: confs.WEBPACK_CONF_FILE,
     env: confs.BUILD_ENV,
