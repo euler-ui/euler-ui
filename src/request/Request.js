@@ -85,6 +85,9 @@ var Request = function(options, cb) {
     } else {
       url = prefix + "/" + url;
     }
+    if (!/^(\/|\\)/.test(prefix)) {
+      url = "/" + url;
+    }
   }
   if (isIE) {
     url = url + "?ts=" + new Date().getTime();
