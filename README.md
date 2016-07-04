@@ -3,7 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/shinxi/euler-ui/badge.svg?branch=master)](https://coveralls.io/github/shinxi/euler-ui?branch=master)
 [![Dependency Status](https://david-dm.org/shinxi/euler-ui.svg)](https://david-dm.org/shinxi/euler-ui)
 [![devDependency Status](https://david-dm.org/shinxi/euler-ui/dev-status.svg)](https://david-dm.org/shinxi/euler-ui#info=devDependencies)
-[![Monthly Downloads](https://img.shields.io/npm/dm/euler-ui.svg)](https://packagist.org/packages/shinxi/euler-ui)
+[![Monthly Downloads](https://img.shields.io/npm/dm/euler-ui.svg)](https://packagist.org/packages/euler-ui/euler-ui)
 <!--
 [![Latest Stable Version](https://poser.pugx.org/shinxi/euler_react/v/stable.png)](https://packagist.org/packages/shinxi/euler)
 -->
