@@ -84,6 +84,7 @@ var proxyRequest = (req, res, url) => {
       request.get({
         url: source,
         qs: req.query,
+        headers: req.headers,
         jar: j
       }).pipe(res);
     } else if ("POST" === method) {
@@ -92,6 +93,7 @@ var proxyRequest = (req, res, url) => {
         url: source,
         qs: req.query,
         json: req.body,
+        headers: req.headers,
         jar: j
       }).pipe(res);
     } else if ("PUT" === method) {
@@ -100,6 +102,7 @@ var proxyRequest = (req, res, url) => {
         url: source,
         qs: req.query,
         json: req.body,
+        headers: req.headers,
         jar: j
       }).pipe(res);
     } else if ("DELETE" === method) {
@@ -107,6 +110,7 @@ var proxyRequest = (req, res, url) => {
       request.del({
         url: source,
         qs: req.query,
+        headers: req.headers,
         jar: j
       }).pipe(res);
     }
