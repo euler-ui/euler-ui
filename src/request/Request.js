@@ -48,6 +48,7 @@ dispatch => {
     })
   })
 }**/
+var XMLDOMParser = DOMParser ? new DOMParser() : "";
 var Request = function(options, cb) {
   if (!REQUEST_MAPS) {
     init();
@@ -64,6 +65,10 @@ var Request = function(options, cb) {
   var source = valMap.source;
   var queryParams = options.queryParams;
   var restParams = options.restParams;
+  var proxy = true;
+  if (options.hasOwnProperty("proxy")) {
+    proxy = options.proxy;
+  }
 
 
   // TODO what does below codes do?
@@ -79,7 +84,7 @@ var Request = function(options, cb) {
     })
   })
 
-  if (prefix) {
+  if (proxy && prefix) {
     if (/^(\/|\\)/.test(url)) {
       url = prefix + url;
     } else {
@@ -144,6 +149,9 @@ var Request = function(options, cb) {
       }
 
       if (cb) {
+        if (!response.body && response.text && (response.req.getHeader("accept") === 'application/xml')) {
+          response.body = XMLDOMParser.parseFromString(response.text, "application/xml");
+        }
         cb(error, response);
       }
     });

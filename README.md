@@ -127,6 +127,7 @@ With simple configuration, you can count on Request module and be able to test w
               userName: 'Tom',
               age: 28
             },
+            proxy: true, // default is true, if set as false, the url won't get proxied, useful for retrieving local resources
             headers: { //header data
               'Context-type': "text"
             }

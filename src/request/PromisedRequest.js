@@ -5,6 +5,7 @@ Promise.config({
   // Enable cancellation.
   cancellation: true
 });
+var XMLDOMParser = DOMParser ? new DOMParser() : "";
 PromisedRequest.prototype.promise = function() {
   var req = this;
   var error = {};
@@ -20,6 +21,9 @@ PromisedRequest.prototype.promise = function() {
       } else if (err) {
         reject(err);
       } else {
+        if (!res.body && res.text && (res.req.getHeader("accept") === 'application/xml')) {
+          res.body = XMLDOMParser.parseFromString(res.text, "application/xml");
+        }
         resolve(res);
       }
     });
