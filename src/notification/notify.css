@@ -70,19 +70,19 @@
 }
 
 .notifications-tc .success .fa-check-circle:before {
-    content: "\f058";
+    content: "\e084";
 }
 
 .notifications-tc .error .fa-check-circle:before {
-    content: "\f057";
+    content: "\e083";
 }
 
 .notifications-tc .info .fa-check-circle:before {
-    content: "\f05a";
+    content: "\e086";
 }
 
 .notifications-tc .warning .fa-check-circle:before {
-    content: "\f06a";
+    content: "\e107";
 }
 
 .fa {
