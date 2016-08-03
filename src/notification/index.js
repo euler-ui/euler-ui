@@ -9,7 +9,7 @@ var notifyTemplate = `
         <div class="notification-info" >
             <div class="notification-icon-wrapper">
                 <div class="notification-notify-icon">
-                <div><div class="icon-el"><i class="fa fa-check-circle"></i></div>
+                <div><div class="icon-el"><i class="glyphicon glyphicon-notify"></i></div>
                 </div></div>
             </div>
             
