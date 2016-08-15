@@ -1,7 +1,7 @@
 import promisedRequest from './PromisedRequest'
 import _ from 'lodash'
 import Notify from "../notification"
-import Spinner from '../Spinner'
+import Spinner from '../spinner'
 
 var check = function(regex) {
   return regex.test(window.navigator.userAgent.toLowerCase());
