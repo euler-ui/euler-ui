@@ -40,12 +40,13 @@ import { request, i18n, Notification, Select } from 'euler-ui'
 - [Request](#request)
 - [Notification](#notification)
 - [I18N](#i18n)
+- [Spinner](#spinner)
 - [Select](#select)
 
 # Request
-Aren't you tired of configuring nginx server to test with different back-end server?
-Aren't you tired of creating an express server to start your app?
-With simple configuration, you can count on Request module and be able to test with different back-end server, without configuring nginx server or creating an express server.
+Aren't you tired of configuring nginx server to test with different back-end server?  
+Aren't you tired of creating an express server to start your app?  
+With simple configuration, you can count on Request module and be able to test with different back-end server, without configuring nginx server or creating an express server.  
   * Start server
       1. create e_conf/req folder at your project root
       2. add conf.json at e_conf/req.
@@ -122,7 +123,8 @@ With simple configuration, you can count on Request module and be able to test w
               productId: "1000"
               // if url path is '/issues/product/:productId/groupbystatus', the real path will be 
               // '/issues/product/1000/groupbystatus'
-            }
+            },
+            loadingMask: true,// display load mask, default is false
             data: { // post data
               userName: 'Tom',
               age: 28
@@ -258,6 +260,18 @@ Module for internationalization and localization purpose. Switch differnt locale
     main.js
         import { i18n} from 'euler-ui'
         console.log(Localization.get("notification.info"));
+    ```
+# Spinner
+
+Widget for show or display loading mask.
+
+    ```js 
+    import {Spinner} from 'euler-ui'
+    var spinner = Spinner.show({
+      type: 'dot', // spinner type, default is ring
+      at: domElement // specify where to show the spinner, default is document.body
+    })
+    Spinner.hide([spinner]); // hide the spinner, if the spinner is not passed in, it will just hide last spinner created by spinner.show.
     ```
 
 # Select

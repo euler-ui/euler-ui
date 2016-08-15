@@ -1,6 +1,7 @@
 import promisedRequest from './PromisedRequest'
 import _ from 'lodash'
 import Notify from "../notification"
+import Spinner from '../Spinner'
 
 var check = function(regex) {
   return regex.test(window.navigator.userAgent.toLowerCase());
@@ -33,11 +34,14 @@ dispatch => {
       productId: "1000"
       // if path at conf*.json is '/issues/product/:productId/groupbystatus', the real path will be 
       // '/issues/product/1000/groupbystatus'    
-    }
+    },
     data: { // post data
       userName: 'Tom',
       age: 28
     },
+    beforeSend() {
+    },
+    loadingMask: true,// display load mask, default is false
     headers: { //header data
       'Context-type': "text"
     }
@@ -102,6 +106,12 @@ var Request = function(options, cb) {
     }
   }
 
+  if (options.loadingMask) {
+    Spinner.show();
+  }
+
+  options.beforeSend && options.beforeSend();
+
   var newRequest;
   if ("GET" === method) {
     newRequest = promisedRequest.get(url);
@@ -147,6 +157,9 @@ var Request = function(options, cb) {
       cb(err, res)
     }
     newRequest.end(function(error, response) {
+      if (options.loadingMask) {
+        Spinner.hide();
+      }
       if (error) {
         handleError(error, response);
         return;
