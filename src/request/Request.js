@@ -95,7 +95,11 @@ var Request = function(options, cb) {
     }
   }
   if (isIE) {
-    url = url + "?ts=" + new Date().getTime();
+    if (/\?/.test(url)) {
+      url = url + "&ts=" + new Date().getTime();
+    } else {
+      url = url + "?ts=" + new Date().getTime();
+    }
   }
 
   var newRequest;
