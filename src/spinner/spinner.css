@@ -49,40 +49,52 @@
     left: 0px;
 }
 
-@keyframes ringloader1 {
-  0% {
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);
-  }
-}
-
-@-webkit-keyframes ringloader1 {
-  0% {
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);
-  }
-}
-
 @keyframes ringloader2 {
-  0% {
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);
-  }
+    0% {
+        transform: rotateX(90deg) rotateY(180deg);
+    }
+    50% {
+        transform: rotateX(180deg) rotateY(360deg);
+    }
+    100% {
+        transform: rotateX(270deg) rotateY(180deg);
+    }
 }
 
 @-webkit-keyframes ringloader2 {
-  0% {
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);
-  }
+    0% {
+        transform: rotateX(90deg) rotateY(180deg);
+    }
+    50% {
+        transform: rotateX(180deg) rotateY(360deg);
+    }
+    100% {
+        transform: rotateX(270deg) rotateY(180deg);
+    }
+}
+
+@keyframes ringloader1 {
+    0% {
+        transform: rotateX(180deg) rotateY(90deg);
+    }
+    50% {
+        transform: rotateX(360deg) rotateY(180deg);
+    }
+    100% {
+        transform: rotateX(180deg) rotateY(270deg);
+    }
+}
+
+@-webkit-keyframes ringloader1 {
+    0% {
+        transform: rotateX(180deg) rotateY(90deg);
+    }
+    50% {
+        transform: rotateX(360deg) rotateY(180deg);
+    }
+    100% {
+        transform: rotateX(180deg) rotateY(270deg);
+    }
 }
 
 .spinner__loader {
@@ -119,7 +131,7 @@
     5% {
         box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
     }
-    10%{
+    10% {
         box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
     }
     20% {
@@ -135,7 +147,6 @@
     }
 }
 
-
 @keyframes dotloader {
     0% {
         -webkit-transform: rotate(0deg);
@@ -145,7 +156,7 @@
     5% {
         box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
     }
-    10%{
+    10% {
         box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
     }
     20% {
