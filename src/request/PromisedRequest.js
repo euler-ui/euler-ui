@@ -1,5 +1,6 @@
 import superagent from 'superagent'
 import Promise from 'bluebird'
+import Spinner from '../spinner'
 var PromisedRequest = superagent.Request;
 Promise.config({
   // Enable cancellation.
@@ -11,6 +12,9 @@ PromisedRequest.prototype.promise = function() {
   var error = {};
   return new Promise(function(resolve, reject, onCancel) {
     req.end(function(err, res) {
+      if (req.options.loadingMask) {
+        Spinner.hide();
+      }
       if (typeof res !== "undefined" && res.status >= 400) {
         var msg = 'cannot ' + req.method + ' ' + req.url + ' (' + res.status + ')';
         error.message = msg;

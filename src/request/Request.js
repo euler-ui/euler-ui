@@ -126,6 +126,9 @@ var Request = function(options, cb) {
     newRequest.query(queryParams);
   }
   newRequest = newRequest.set(headers);
+
+  newRequest.options = options;
+
   if (cb) {
     var handleError = function(err, res) {
       console.error('oh no. err at Request.js', err);
