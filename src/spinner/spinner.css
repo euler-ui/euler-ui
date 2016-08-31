@@ -13,8 +13,8 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: #eee;
-    opacity: 0.4;
+    background-color: white;
+    opacity: 0.7;
 }
 
 .spinner__ring {
@@ -105,8 +105,8 @@
 }
 
 .dotloader {
-    color: #222;
-    opacity: 0.2;
+    color: black;
+    opacity: 0.4;
     font-size: 10vmin;
     text-indent: -9999em;
     overflow: hidden;

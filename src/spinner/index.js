@@ -31,9 +31,9 @@ const Spinner = React.createClass({
   render() {
     var props = this.props;
     var type = props.type;
-    var loader = (<RingLoader />);
+    var loader = (<DotLoader />);
     if (type === 'ring') {
-      loader = <DotLoader />
+      loader = <RingLoader />
     }
     return (
       <div ref="spinner" className="spinner">
