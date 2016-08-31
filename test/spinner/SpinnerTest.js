@@ -11,7 +11,7 @@ describe('Spinner', () => {
     Spinner.show()
     var $ = TestHelper.getSelector();
     assert.equal(1, $(".spinner").length);
-    assert.equal(1, $(".spinner .spinner__ring").length);
+    assert.equal(1, $(".spinner .circleloader").length);
   });
   it('#hide success', () => {
     Spinner.show();

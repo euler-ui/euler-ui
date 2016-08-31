@@ -1,6 +1,6 @@
 {
   "name": "euler-ui",
-  "version": "0.1.1-alpha.37",
+  "version": "0.1.1-alpha.38",
   "description": "Powerful widgets and utilities for React",
   "main": "./lib/index.js",
   "scripts": {
@@ -40,6 +40,7 @@
     "lodash": "^4.13.1",
     "react-select": "^1.0.0-beta13",
     "shelljs": "^0.7.0",
+    "spin.js": "^2.3.2",
     "superagent": "^1.8.3"
   },
   "devDependencies": {
