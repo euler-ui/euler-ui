@@ -268,7 +268,7 @@ Widget for show or display loading mask.
     ```js 
     import {Spinner} from 'euler-ui'
     var spinner = Spinner.show({
-      type: 'ring', // spinner type, default is dot
+      type: 'circle', // spinner type, default is circle, options are dot, ring
       at: domElement // specify where to show the spinner, default is document.body
     })
     Spinner.hide([spinner]); // hide the spinner, if the spinner is not passed in, it will just hide last spinner created by spinner.show.
