@@ -258,15 +258,18 @@ Notification.create({
 4.执行以上步骤之后,你现在可以免费使用我们的i18n模块!!
 
     ```js 
+
     main.js
         import { i18n} from 'euler-ui'
         console.log(Localization.get("notification.info"));
+        
     ```
 # Spinner
 
 用来显示或加载mask的小部件.
 
-     ```js
+    ```js
+
     import {Spinner} from 'euler-ui'
     var spinner = Spinner.show({
       type: 'circle', // spinner类型,默认是circle,可选的有dot, ring
