@@ -261,18 +261,19 @@ Module for internationalization and localization purpose. Switch differnt locale
         import { i18n} from 'euler-ui'
         console.log(Localization.get("notification.info"));
     ```
+    
 # Spinner
 
 Widget for show or display loading mask.
 
-    ```js 
+```js 
     import {Spinner} from 'euler-ui'
     var spinner = Spinner.show({
       type: 'circle', // spinner type, default is circle, options are dot, ring
       at: domElement // specify where to show the spinner, default is document.body
     })
     Spinner.hide([spinner]); // hide the spinner, if the spinner is not passed in, it will just hide last spinner created by spinner.show.
-    ```
+```
 
 # Select
 
