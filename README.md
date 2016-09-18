@@ -182,6 +182,7 @@ With simple configuration, you can count on Request module and be able to test w
             success();
         })
         ```
+        
 # Notification
 
 A simple notification creator for you to create information/warning/error/success notificaiton.
@@ -261,7 +262,7 @@ Module for internationalization and localization purpose. Switch differnt locale
         import { i18n} from 'euler-ui'
         console.log(Localization.get("notification.info"));
     ```
-    
+
 # Spinner
 
 Widget for show or display loading mask.
