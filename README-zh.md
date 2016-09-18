@@ -141,7 +141,7 @@ import { request, i18n, Notification, Select } from 'euler-ui'
             success();
         })
         ```
-        Moreover, you can specify a request at proxy.json with the same identifier sent by request
+        此外,你可以通过request发送的相同标识符指定一个请求.
         ```js 
         proxy.json
             [
@@ -256,6 +256,7 @@ Notification.create({
     ```
     
 4.执行以上步骤之后,你现在可以免费使用我们的i18n模块!!
+
     ```js 
     main.js
         import { i18n} from 'euler-ui'
@@ -265,14 +266,14 @@ Notification.create({
 
 用来显示或加载mask的小部件.
 
-    ```js 
+     ```js
     import {Spinner} from 'euler-ui'
     var spinner = Spinner.show({
       type: 'circle', // spinner类型,默认是circle,可选的有dot, ring
       at: domElement // 指定显示spinner的地方, 默认为document.body
     })
     Spinner.hide([spinner]); // 隐藏spinner,如果spinner未通过, 他将隐藏spinner.show创建的最后一个spinner 
-    ```
+   ```
 
 # Select
 
