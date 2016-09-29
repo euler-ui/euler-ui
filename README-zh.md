@@ -65,7 +65,7 @@ import { request, i18n, Notification, Select } from 'euler-ui'
         ```
         npm estart
         ```
- * Sending a request
+  * 发送一个请求
     1. 在e_conf/req下创建代理(proxy)文件夹
     2.为不同的环境创建不同的请求代理,例如,proxy.json或proxy_dev.json,json,proxy_sit.json, proxy_uat.json, proxy_prod.json
 
