@@ -1,4 +1,4 @@
-import request from '../request/PromisedRequest'
+
 var getQueryParams = function(queryString) {
   var query = (queryString || window.location.search).substring(1);
   if (!query) {
