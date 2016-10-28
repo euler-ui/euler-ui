@@ -24,12 +24,12 @@ Euler UI是一组包括UI小部件和工具的库,它旨在加快前端开发。
 
     npm install euler-ui
 
-Then:
+然后:
 
 ```js
 var euler = require("euler-ui");
 ```
-or es6
+或使用 es6
 ```js
 import * as euler from 'euler-ui'
 import { request, i18n, Notification, Select } from 'euler-ui'
@@ -48,23 +48,22 @@ import { request, i18n, Notification, Select } from 'euler-ui'
 难道你不厌倦通过创建一个表达服务器来启动你的应用程序? 
 通过简单的配置,你可以通过Request模块在无需配置nginx服务器或创建一个express服务器的情况下测试不同的后端服务器.
   * 启动服务器
-      1. 在项目根目录创建e_conf/req文件夹.
-      2. 在e_conf/req下添加conf.json.
+ 1. 在项目根目录创建e_conf/req文件夹.
+ 2. 在e_conf/req下添加conf.json.
 
-        ```js
+```js
         {
             "STATIC_FOLDER": ["/", "/src"], // 请求服务器上使用的静态文件夹
             "WEBPACK_CONF_FILE": "webpack.config.js", // webpack配置文件的路径
             "BUILD_ENV": "DEV", //建立环境，默认选项是DEV, 可以选择的有 DEV, SIT, UAT, PROD, 将与不同的代理文件映射。
             "INDEX_HTML": "src/public/index.html", // 用于请求服务的主页
         }
-        ```
+```
+ 3.运行
 
-      3. 运行
-
-        ```
+```
         npm estart
-        ```
+```
   * 发送一个请求
     1. 在e_conf/req下创建代理(proxy)文件夹
     2.为不同的环境创建不同的请求代理,例如,proxy.json或proxy_dev.json,json,proxy_sit.json, proxy_uat.json, proxy_prod.json
@@ -185,9 +184,10 @@ import { request, i18n, Notification, Select } from 'euler-ui'
 
 # Notification
 
-通过information/warning/error/success来为你创建一个简单的Notification.
+通过information/warning/error/success来为你创建一个简单的通知.
 
 ```js
+import { i18n } from 'euler-ui'
 // 创建一个Hello World notificaiton信息。
 Notification.create({
   message: "Hello World!"
@@ -204,7 +204,7 @@ Notification.create({
 // 如果timeout值小于等于0,通知将不会自动关闭,只能手动关闭
 Notification.create({
   message: "Hello World!",
-  timeout: -1 // 除非手动点击关闭按钮，否则通知不会关闭
+  timeout: -1 // 除非手动点击关闭按钮，否则通知不会自动关闭
 })
 ```
 
@@ -212,9 +212,9 @@ Notification.create({
 
 以国际化和本地化为目的模块.在运行时切换不同的环境!
 
-1. 在项目根目录创建e_conf/i18n文件夹.
+1. 在项目根目录创建e_conf文件夹，然后再c_conf文件夹下创建i18n文件夹.
 
-2. 在e_conf/i18n添加conf.json.
+2. 在e_conf/i18n文件夹下添加conf.json.
 
     ```js
     {
@@ -260,14 +260,14 @@ Notification.create({
 
 ```js 
     main.js
-        import { i18n} from 'euler-ui'
-        console.log(Localization.get("notification.info"));
+        import { i18n } from 'euler-ui'
+        console.log(i18n.get("notification.info"));
         
 ```
 
 # Spinner
 
-用来显示或加载mask的小部件.
+用来显示或加载mask效果的小部件.
 
 ```js
     import {Spinner} from 'euler-ui'
